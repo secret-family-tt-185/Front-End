@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 
+
+//need to get submit form working
+
 function LoginForm() {
 
     const [formState, setFormState] = useState({
@@ -66,3 +69,5 @@ function LoginForm() {
 }
 
 export default LoginForm
+
+
