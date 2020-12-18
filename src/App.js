@@ -4,7 +4,7 @@ import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import Recipes from "./components/Recipes";
 import './App.css';
-import PrivateRoute from "./components/utils/PrivateRoute";
+import PrivateRoute from "./utils/PrivateRoute";
 
 
 
