@@ -1,6 +1,28 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import axiosWithAuth from "../utils/AxiosWithAuth"
+// need to import add & edit functions later
+
 
 function Recipes() {
+    const [recipes, setRecipes] = useState([])
+
+    const renderRecipes = () => {
+        axiosWithAuth()
+        .get('fakeurl/recipes') //3. /recipes GET
+        .then(res => {
+            console.log('AL, renderRecipes: works', res);
+            setRecipes(res.data)
+        })
+        .catch((err) => {
+            console.error('Error!!', err )
+        })
+    };
+
+    useEffect(() => {
+        renderRecipes();
+    }, [])
+
+
     return (
         <div>
             <h2>Title</h2>
@@ -15,3 +37,5 @@ function Recipes() {
 }
 
 export default Recipes
+
+//need to add edit & add functions
