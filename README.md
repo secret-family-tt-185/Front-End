@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+Product Vision Document
+This is the template for the Product Vision Document that you'll complete as a team at the beginning of Build Week. The PVD is crucial to the planning phase and is mandatory for all groups to complete.
+If you prefer to work in Google Docs, you can make a copy of the document here.
+☝️ Proposal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+What problem does your app solve?
+Stores and adds family recipes. Helps to document family recipes and stops them from being forgotten. 
+Be as specific as possible; how does your app solve the problem?
+	Adds recipes, ability to edit and delete recipes, & stores them in a convenient accessible location for anyone with a login to view. 
+What is the mission statement?
+Secure timeless recipes 
+💡 Features
 
-## Available Scripts
+What featuress are required for your minimum viable product?
+1. On-boarding process for a new `user`
 
-In the project directory, you can run:
+2. Ability to enter a new `recipe`, including `title`, `source` (ex: Grandma Ethel), `ingredients`, `instructions`, and `category` (dinner, chicken, dessert, pasta, etc) and edit or delete it later.
 
-### `npm start`
+3. Homepage to view all entered `recipes`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. Ability to search for `recipes` by `title` or tagged `categories`.
+What features may you wish to put in a future release?
+Post photos of the completed recipe and hand written recipes.
+Being able to customize your digital recipe cards
+Add favorite recipes for each user
+Take a photo and have it translate the writing to text.
+What do the top 3 similar apps do for their users?
+Gives step by step instructions. Show images of the food. Lest you favorite recipes for later. Creates a shopping list. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+🛠 Frameworks - Libraries
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+What 3rd party frameworks/libraries are you considering using?
+React, axios, express, JWT tokens, redux, context API, mySQL, mySQL lite, supertest. 
+Do the APIs you need require you to contact them to gain access?
+No.
+Are you required to pay to use said API(s)?
+No.
+🧮 For Data Scientists
 
-### `npm run build`
+Describe the established data source with at least rough data able to be provided on day one.
+Write a description for what the data science problem is. What uncertainty or prediction are you trying to discover? How could this data be used to find a solution to this problem?
+What kind of target output can you deliver to the Web/UX/iOS teams to work with? Is it in JSON format or something else?
+🎯 Target Audience
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Who is your target audience? Be specific.
+Amatuer chefs, eldery individuals who want to document their recipes for posterity.
+What feedback have you gotten from potential users?
+None yet. (Come back later to review)
+Have you validated this problem and your solution with a target audience? Describe how.
+(Come back later to review)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🔑 Prototype Key Feature(s)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+How long do you think it will take to implement these features?
+2 weeks
+Do you anticipate working on stretch functionality after completion of a Minimal Viable Product?
+Yes
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
