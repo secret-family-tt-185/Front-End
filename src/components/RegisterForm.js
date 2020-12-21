@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
+import axiosWithAuth from "../utils/AxiosWithAuth"
 
-function RegisterForm() {
+function RegisterForm(props) {
     const [formState, setFormState] = useState({
         username: "",
         password: ""
@@ -10,6 +11,11 @@ function RegisterForm() {
         password: ""
       });
 
+
+      const [serverError, setServerError] = useState("")
+
+      const [post, setPost] = useState([]);
+
       const inputChange = (e) => {
 
           setFormState({
@@ -18,9 +24,32 @@ function RegisterForm() {
           })
       }
 
+
+      const submitForm = (e) => {
+        e.preventDefault()
+        axiosWithAuth()
+        .post("fakeurl/auth/login", formState) //need to update URL
+        .then((res) => {
+          console.log("AL, LoginForm.js, login: res", res);
+          localStorage.setItem("token", res.payload.data);
+          props.history.push('/protected');
+          setPost(res.data);
+
+          setServerError(null)
+
+          setFormState({
+            ...formState
+          })
+        })
+        .catch((err) => {
+          setServerError("Oh No! Something went wrong!")
+        })
+
+      }
+
         return (
             <div>
-              <form>
+              <form onSubmit={submitForm}>
                 <fieldset>
                   <legend>
                     <h1>Sign up</h1></legend>

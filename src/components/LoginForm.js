@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
-
+import axiosWithAuth from "../utils/AxiosWithAuth"
 
 //need to get submit form working
 
-function LoginForm() {
+function LoginForm(props) {
 
     const [formState, setFormState] = useState({
         username: "",
@@ -15,6 +15,10 @@ function LoginForm() {
         password: ""
       });
 
+    const [serverError, setServerError] = useState("")
+
+    const [post, setPost] = useState([]);
+
       const inputChange = (e) => {
 
           setFormState({
@@ -23,9 +27,33 @@ function LoginForm() {
           })
       }
 
+
+
+      const submitForm = (e) => {
+        e.preventDefault()
+        axiosWithAuth()
+        .post("fakeurl/auth/login", formState) //need to update URL
+        .then((res) => {
+          console.log("AL, LoginForm.js, login: res", res);
+          localStorage.setItem("token", res.payload.data);
+          props.history.push('/protected');
+          setPost(res.data);
+
+          setServerError(null)
+
+          setFormState({
+            ...formState
+          })
+        })
+        .catch((err) => {
+          setServerError("Oh No! Something went wrong!")
+        })
+
+      }
+
         return (
             <div>
-              <form>
+              <form onSubmit={submitForm}>
                 <fieldset>
                   <legend>
                     <h1>Log In</h1></legend>
