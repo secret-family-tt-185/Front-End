@@ -32,6 +32,7 @@ function Recipes() {
             <p>instructions</p>
             <p>category</p>
             <Link to="/add">Add Recipe Here!</Link>
+            <Link to="/edit">Edit Recipes Here!</Link>
 
 
         </div>

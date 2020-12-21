@@ -6,6 +6,8 @@ import Recipes from "./components/Recipes";
 import './App.css';
 import PrivateRoute from "./utils/PrivateRoute";
 import AddRecipe from "./components/AddRecipe";
+import EditRecipes from "./components/EditRecipes";
+
 
 
 
@@ -25,6 +27,7 @@ function App() {
   <Route path="/register" render={() => <RegisterForm/>} />
   <PrivateRoute exact path="/protected" component={Recipes} />
   <PrivateRoute exact path="/add" component={AddRecipe} />
+  <PrivateRoute exact path="/edit" component={EditRecipes} />
       </Switch>
     </div>
     </Router>

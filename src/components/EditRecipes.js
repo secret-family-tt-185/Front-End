@@ -1,12 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import axiosWithAuth from '../utils/AxiosWithAuth'
 
 
-function EditRecipes() {
+function EditRecipes(props) {
 
 
     const [editRecipe, setEditRecipe] = useState({
-        user_id:"",
+        id:"",
         title: "",
         source: "",
         ingredients: "",
@@ -14,54 +14,86 @@ function EditRecipes() {
         category: ""
     })
 
+
+    const putRecipe = (e) => {
+        e.preventDefault();
+        axiosWithAuth()
+        .put(`/recipes/${editRecipe.id}`, editRecipe )
+        .then((res) => {
+            console.log("Put works", res)
+            setEditRecipe(res.data)
+            props.renderRecipes()
+
+        })
+        .catch(err => {
+            console.error("Put fails!", err)
+            
+        })
+    }
+
+
+    const deleteRecipe = (e) => {
+        axiosWithAuth()
+        .delete(`/recipes/${editRecipe.id}`)
+        .then((res) => {
+            setEditRecipe(res.data)
+            props.renderRecipes()
+        })
+        .catch(err => {
+            console.error("Delete fails!", err)
+        })
+    }
+
+
     const inputChange = (e) => {
 
-        setAddRecipe({
-          ...addRecipe,
+        setEditRecipe({
+          ...editRecipe,
             [e.target.name]: e.target.value
         })
     }
 
     return (
         <div>
-            <form onSubmit={postSubmit}>
+            <form onSubmit={putRecipe}>
                 <input
                 placeholder="Title"
                 name="title"
                 type="text"
-                value={addRecipe.title}
+                value={editRecipe.title}
                 onChange={inputChange}
                 />
                 <input
                 placeholder="Source"                
                 name="source"
                 type="text"
-                value={addRecipe.source}
+                value={editRecipe.source}
                 onChange={inputChange}
                 />
                 <input
                 placeholder="Ingredients" 
                 name="ingredients"
                 type="text"
-                value={addRecipe.ingredients}
+                value={editRecipe.ingredients}
                 onChange={inputChange}
                 />
                 <input
                 placeholder="Instructions"
                 name="instructions"
                 type="text"
-                value={addRecipe.instructions}
+                value={editRecipe.instructions}
                 onChange={inputChange}
                 />
                 <input
                 placeholder="Category"
                 name="category"
                 type="text"
-                value={addRecipe.category}
+                value={editRecipe.category}
                 onChange={inputChange}
                 />
-                <button>Add Recipe!</button>
+                <button>Edit Recipe!</button>
             </form>
+            <button onClick={() => deleteRecipe()}>Delete Recipe!</button>
             
         </div>
     )
@@ -69,3 +101,12 @@ function EditRecipes() {
 
 
 export default EditRecipes
+
+
+// 1.. /auth/login POST
+// 2. /auth/register/POST
+// 3. /recipes GET
+// 4. /recipes POST
+// 5. /recipes/:id GET
+// 6. /recipes/:id PUT
+// 7. /recipes/:id DELETE
