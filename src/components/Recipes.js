@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react'
-import axiosWithAuth from "../utils/AxiosWithAuth"
+import React, {useState, useEffect} from 'react';
+import { Link } from "react-router-dom";
+import axiosWithAuth from "../utils/AxiosWithAuth";
 // need to import add & edit functions later
 
 
@@ -30,6 +31,7 @@ function Recipes() {
             <p>ingredients</p>
             <p>instructions</p>
             <p>category</p>
+            <Link to="/add">Add Recipe Here!</Link>
 
 
         </div>
