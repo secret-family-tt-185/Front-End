@@ -26,15 +26,18 @@ function Recipes() {
 
     return (
         <div>
+        <div className="recipes">
             <h2>Title</h2>
             <h3>Source</h3>
             <p>ingredients</p>
             <p>instructions</p>
             <p>category</p>
-            <Link to="/add">Add Recipe Here!</Link>
+        </div>
+        <div className="recipe-page-buttons">
+            <Link  to="/add">Add Recipe Here!</Link>
             <Link to="/edit">Edit Recipes Here!</Link>
-
-
+       
+        </div>
         </div>
     )
 }

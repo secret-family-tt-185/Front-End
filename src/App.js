@@ -19,9 +19,11 @@ function App() {
     <Router>
     <div>
       <h1>Secret Family Recipes Cookbook</h1>
+      <header>
       <Link to="/">Login</Link> 
       <Link to="/register">Register</Link> 
       <Link to="/protected">See Recipes</Link> 
+      </header>
       <Switch>
   <Route exact path="/" render={() => <LoginForm/>} /> 
   <Route path="/register" render={() => <RegisterForm/>} />

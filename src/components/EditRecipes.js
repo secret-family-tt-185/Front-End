@@ -93,7 +93,7 @@ function EditRecipes(props) {
                 />
                 <button>Edit Recipe!</button>
             </form>
-            <button onClick={() => deleteRecipe()}>Delete Recipe!</button>
+            <button className="delete-button" onClick={() => deleteRecipe()}>Delete Recipe!</button>
             
         </div>
     )
