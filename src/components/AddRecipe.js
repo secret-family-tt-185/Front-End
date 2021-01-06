@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import axiosWithAuth from '../utils/AxiosWithAuth'
+import {axiosWithAuth} from '../utils/AxiosWithAuth'
 
 function AddRecipe() {
 
