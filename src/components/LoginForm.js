@@ -16,7 +16,7 @@ function LoginForm(props) {
         password: ""
       });
 
-  
+      console.log("Working")
 
 
       console.log(setErrors)
