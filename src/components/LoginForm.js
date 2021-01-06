@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
-import axiosWithAuth from "../utils/AxiosWithAuth"
+import {axiosWithAuth} from "../utils/AxiosWithAuth"
 
 //need to get submit form working
 
@@ -10,16 +10,19 @@ function LoginForm(props) {
         username: "",
         password: ""
       });
+
     const [errors, setErrors] = useState({
         username: "",
         password: ""
       });
 
-    const [serverError, setServerError] = useState("")
+  
 
-    const [post, setPost] = useState([]);
 
-      const inputChange = (e) => {
+      console.log(setErrors)
+
+
+      let inputChange = (e) => {
 
           setFormState({
             ...formState,
@@ -32,21 +35,14 @@ function LoginForm(props) {
       const submitForm = (e) => {
         e.preventDefault()
         axiosWithAuth()
-        .post("fakeurl/auth/login", formState) //need to update URL
+        .post("/auth/login", formState) 
         .then((res) => {
           console.log("AL, LoginForm.js, login: res", res);
-          localStorage.setItem("token", res.payload.data);
+          window.localStorage.setItem("token", res.data.payload);
           props.history.push('/protected');
-          setPost(res.data);
-
-          setServerError(null)
-
-          setFormState({
-            ...formState
-          })
         })
-        .catch((err) => {
-          setServerError("Oh No! Something went wrong!")
+        .catch(err => {
+          console.error(err.response)
         })
 
       }

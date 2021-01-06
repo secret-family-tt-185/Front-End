@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import axiosWithAuth from "../utils/AxiosWithAuth"
+import { axiosWithAuth1 } from "../utils/AxiosWithAuth"
 
 function RegisterForm(props) {
     const [formState, setFormState] = useState({
@@ -11,10 +11,8 @@ function RegisterForm(props) {
         password: ""
       });
 
+      console.log(setErrors)
 
-      const [serverError, setServerError] = useState("")
-
-      const [post, setPost] = useState([]);
 
       const inputChange = (e) => {
 
@@ -27,24 +25,16 @@ function RegisterForm(props) {
 
       const submitForm = (e) => {
         e.preventDefault()
-        axiosWithAuth()
-        .post("fakeurl/auth/login", formState) //need to update URL
+        axiosWithAuth1()
+        .post("/auth/register", formState) 
         .then((res) => {
-          console.log("AL, LoginForm.js, login: res", res);
-          localStorage.setItem("token", res.payload.data);
+          console.log("AL, RegisterForm.js, login: res", res);
+          window.localStorage.setItem("token", res.data.payload);
           props.history.push('/protected');
-          setPost(res.data);
-
-          setServerError(null)
-
-          setFormState({
-            ...formState
-          })
         })
-        .catch((err) => {
-          setServerError("Oh No! Something went wrong!")
+        .catch(err => {
+          console.error(err.response)
         })
-
       }
 
         return (
@@ -52,7 +42,7 @@ function RegisterForm(props) {
               <form onSubmit={submitForm}>
                 <fieldset>
                   <legend>
-                    <h1>Sign up</h1></legend>
+                    <h1>Register</h1></legend>
                   <label htmlFor="username" className="labels">Username: </label>
                   <input
                     placeholder="Create a Username"

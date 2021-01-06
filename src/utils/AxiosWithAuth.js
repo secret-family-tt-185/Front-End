@@ -1,17 +1,29 @@
-import Axios from "axios"
+import axios from "axios"
 
 
 
-const axiosWithAuth = () => {
+export const axiosWithAuth = () => {
 
-    const token = window.localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     
-    return Axios.create({
-    baseURL: "http://localhost:5000", //will need to update
+    return axios.create({
+    baseURL: "https://secret-family.herokuapp.com", 
     headers: {
-        authorization: token
+        authorization: `${token} 1`
     }
 })
 }
 
-export default axiosWithAuth
+export const axiosWithAuth1 = () => {
+
+    const token = localStorage.getItem('token');
+    
+    return axios.create({
+    baseURL: "https://secret-family.herokuapp.com", 
+    headers: {
+        authorization: `${token} 2`
+    }
+})
+}
+
+
