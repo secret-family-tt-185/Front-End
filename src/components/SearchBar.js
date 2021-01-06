@@ -5,7 +5,8 @@ function SearchBar() {
 const [keyword, setKeyword] = useState('')
 
     return (
-        <div>
+        <div className="searchbar">
+            <label className="search-font-size">Search: </label>
             <input
             value={keyword}
             placeholder="search for recipes"

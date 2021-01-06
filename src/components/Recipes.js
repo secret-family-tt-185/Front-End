@@ -7,6 +7,8 @@ import SearchBar from './SearchBar';
 
 function Recipes() {
     const [recipes, setRecipes] = useState([])
+    console.log(recipes)
+
 
     const renderRecipes = () => {
         axiosWithAuth()

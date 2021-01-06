@@ -16,7 +16,10 @@ function LoginForm(props) {
         password: ""
       });
 
-    const [serverError, setServerError] = useState("")
+  
+
+
+      console.log(setErrors)
 
 
       let inputChange = (e) => {
@@ -38,8 +41,8 @@ function LoginForm(props) {
           window.localStorage.setItem("token", res.data.payload);
           props.history.push('/protected');
         })
-        .catch((err) => {
-          setServerError("Oh No! Something went wrong!")
+        .catch(err => {
+          console.error(err.response)
         })
 
       }

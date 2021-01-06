@@ -120,3 +120,16 @@ a:hover {
 .delete-button{
   width: 25%;
 }
+
+.searchbar {
+  display: flex;
+  width: 25%;
+  margin: 0 auto;
+  height: 4rem;
+  
+}
+
+.search-font-size{
+  font-size: 1.9rem;
+  padding: 1%;
+}

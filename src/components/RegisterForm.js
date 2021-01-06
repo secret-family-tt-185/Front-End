@@ -11,9 +11,7 @@ function RegisterForm(props) {
         password: ""
       });
 
-
-      const [serverError, setServerError] = useState("")
-
+      console.log(setErrors)
 
 
       const inputChange = (e) => {
@@ -28,16 +26,15 @@ function RegisterForm(props) {
       const submitForm = (e) => {
         e.preventDefault()
         axiosWithAuth1()
-        .post("/auth/register/", formState) 
+        .post("/auth/register", formState) 
         .then((res) => {
           console.log("AL, RegisterForm.js, login: res", res);
           window.localStorage.setItem("token", res.data.payload);
           props.history.push('/protected');
         })
-        .catch((err) => {
-          setServerError("Oh No! Something went wrong!")
+        .catch(err => {
+          console.error(err.response)
         })
-
       }
 
         return (
