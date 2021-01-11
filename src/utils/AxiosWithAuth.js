@@ -9,7 +9,7 @@ export const axiosWithAuth = () => {
     return axios.create({
     baseURL: "https://secret-family.herokuapp.com", 
     headers: {
-        authorization: `${token} 1`
+        authorization: `${token}`
     }
 })
 }

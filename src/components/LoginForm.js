@@ -84,7 +84,7 @@ function LoginForm(props) {
                     Sign In
                   </button>
                     <h2>
-                  <Link to="/register">New User? </Link>
+                  <Link className="new-user" to="/register">New User? </Link>
                   </h2>
                 </fieldset>
               </form>

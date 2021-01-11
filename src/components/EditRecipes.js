@@ -9,9 +9,8 @@ function EditRecipes(props) {
         id:"",
         title: "",
         source: "",
-        ingredients: "",
         instructions: "",
-        category: ""
+
     })
 
 
@@ -71,24 +70,10 @@ function EditRecipes(props) {
                 onChange={inputChange}
                 />
                 <input
-                placeholder="Ingredients" 
-                name="ingredients"
-                type="text"
-                value={editRecipe.ingredients}
-                onChange={inputChange}
-                />
-                <input
                 placeholder="Instructions"
                 name="instructions"
                 type="text"
                 value={editRecipe.instructions}
-                onChange={inputChange}
-                />
-                <input
-                placeholder="Category"
-                name="category"
-                type="text"
-                value={editRecipe.category}
                 onChange={inputChange}
                 />
                 <button>Edit Recipe!</button>

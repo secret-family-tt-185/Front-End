@@ -1,8 +1,12 @@
 body{
   font-size: 1.4rem;
   font-family: 'Cabin', sans-serif;
-  
+  background-image: url("https://images.unsplash.com/photo-1506368083636-6defb67639a7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 
 html {
   font-size: 62.5%;
@@ -34,7 +38,7 @@ label {
   flex-direction: column;
   align-items: flex-start;
   margin: 10px 0;
-  font-size: 1.4rem;
+  font-size: 2rem;
 }
 
 input,
@@ -96,6 +100,11 @@ h1{
 
 h2{
   text-align: center;
+  font-size: 2.5rem;
+}
+
+h3{
+  font-size: 2rem;
 }
 
 a:hover {
@@ -107,8 +116,29 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: white;
+  margin: 0 auto;
+  width: 50%;  
+  margin-top: 1%;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.card-style{
+  text-align: left;
+  margin-left: 2%;
+}
+
+.instructions {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.9rem;
   
 }
+
+
+
 
 .recipe-page-buttons{
   width: 100%;
@@ -132,4 +162,10 @@ a:hover {
 .search-font-size{
   font-size: 1.9rem;
   padding: 1%;
+}
+
+
+
+.new-user{
+  background: none;
 }

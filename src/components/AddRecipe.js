@@ -7,9 +7,8 @@ function AddRecipe() {
         user_id:"",
         title: "",
         source: "",
-        ingredients: "",
         instructions: "",
-        category: ""
+
     })
 
 
@@ -56,24 +55,10 @@ function AddRecipe() {
                 onChange={inputChange}
                 />
                 <input
-                placeholder="Ingredients" 
-                name="ingredients"
-                type="text"
-                value={addRecipe.ingredients}
-                onChange={inputChange}
-                />
-                <input
                 placeholder="Instructions"
                 name="instructions"
                 type="text"
                 value={addRecipe.instructions}
-                onChange={inputChange}
-                />
-                <input
-                placeholder="Category"
-                name="category"
-                type="text"
-                value={addRecipe.category}
                 onChange={inputChange}
                 />
                 <button>Add Recipe!</button>
