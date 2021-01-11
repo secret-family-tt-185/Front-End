@@ -29,7 +29,7 @@ function RegisterForm(props) {
         .post("/auth/register", formState) 
         .then((res) => {
           console.log("AL, RegisterForm.js, login: res", res);
-          window.localStorage.setItem("token", res.data.payload);
+          window.localStorage.setItem("token", res.data.token);
           props.history.push('/protected');
         })
         .catch(err => {
